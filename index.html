@@ -187,7 +187,8 @@
   .tl .seg li::before { content: "–"; position: absolute; left: 0; color: var(--orange); font-weight: 700; }
 
   /* steps / flow */
-  .flow { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
+  .flow { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+  .flow .step { flex: 1 1 220px; max-width: 260px; }
   .flow .step { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 16px 14px; box-shadow: var(--shadow); }
   .flow .step .k { display: inline-block; font-family: var(--font-cond); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; font-size: .72em; color: #3A1E00; background: linear-gradient(135deg, var(--orange), var(--gold)); padding: 3px 9px; border-radius: 6px; margin-bottom: 8px; }
   .flow .step h4 { margin-bottom: 4px; }
@@ -437,7 +438,7 @@
   </div>
 
   <div class="stats">
-    <div class="stat"><div class="big">60<small>minutes</small></div><div class="lbl">Both tasks, handwritten. No fixed split between tasks – you manage the time.</div></div>
+    <div class="stat"><div class="big">60<small>minutes</small></div><div class="lbl">Both tasks, handwritten.</div></div>
     <div class="stat"><div class="big">10<small>points · Task 1</small></div><div class="lbl">Reply email/letter · <span class="num">≥ 120</span> words · ~20 min</div></div>
     <div class="stat"><div class="big">20<small>points · Task 2</small></div><div class="lbl">Opinion essay · <span class="num">≥ 250</span> words · ~40 min</div></div>
     <div class="stat"><div class="big">4<small>criteria</small></div><div class="lbl">Task Fulfillment · Organization · Vocabulary · Grammar</div></div>
@@ -452,7 +453,6 @@
         <tr><td data-l="Task" class="fn">Task 2 · Essay</td><td data-l="What it asks">Write an <strong>opinion essay</strong> on a general social/academic topic (health, technology, education, the environment, cities…). Needs arguments + examples.</td><td data-l="Word count" class="n">≥ 250<br><small>(260–300 recommended)</small></td><td data-l="Time" class="n">~40′</td><td data-l="Points" class="n">20</td><td data-l="Weight" class="n">2/3</td></tr>
       </tbody>
     </table></div>
-    <div class="note info"><span class="tag">Formula</span><p>VSTEP Writing score = <strong>(Task 1 + Task 2 × 2) ÷ 3</strong>. Task 2 counts twice as much – but Task 1 is the <strong>easiest to score well on</strong>: a fixed frame and the points are given. Never skip Task 1.</p></div>
   </section>
 
   <section class="block" id="s0-criteria">
@@ -463,7 +463,6 @@
       <div class="card purple"><span class="k">Vocabulary</span><span class="pct">~15%</span><h4>Vocabulary</h4><ul><li>Enough words for the topic?</li><li>Right context, right register (formal/informal)?</li><li>Little repetition, few spelling errors?</li></ul><p>→ Paraphrase the prompt; use <strong>collocations you know well</strong>.</p></div>
       <div class="card accent"><span class="k">Grammar</span><span class="pct">~25%</span><h4>Grammar</h4><ul><li>Sentence variety: simple – compound – complex?</li><li>Correct tense, subject–verb agreement?</li><li>Errors that don't block the reader?</li></ul><p>→ 1–2 <strong>reliable complex sentences</strong> per paragraph, the rest kept simple.</p></div>
     </div>
-    <p class="vn" style="margin-top:10px">The % weights are a common estimate from exam-prep materials; the real end-of-course paper is marked on these 4 criteria on a scale of 10 (Task 1) and 20 (Task 2).</p>
   </section>
 
   <section class="block" id="s0-bands">
@@ -477,7 +476,6 @@
         <tr><td data-l="Criterion" class="fn">Grammar</td><td data-l="B1">Mostly simple sentences; complex ones often wrong.</td><td data-l="B2">Several <strong>correct</strong> complex sentences; small errors don't affect meaning.</td></tr>
       </tbody>
     </table></div>
-    <div class="note good"><span class="tag">Goal</span><p>This guide first builds a <strong>reliable B1 frame</strong> (full content, enough words, correct structure), then shows how to <strong>move up to B2</strong> with complex sentences, collocations and examples. Writing under 120 / 250 words or going off-topic costs the most points – avoid both from the start.</p></div>
   </section>
 
   <section class="block" id="s0-time">
@@ -490,11 +488,11 @@
       <div class="seg t2"><div class="t">25′ – 52′</div><ul><li>Write 4 paragraphs from the frame</li><li>Don't stop for minor fixes</li></ul></div>
       <div class="seg t2"><div class="t">52′ – 60′</div><ul><li>Proofread Task 2</li><li>Short on words → add one example/result sentence</li></ul></div>
     </div>
-    <div class="note warn"><span class="tag">Tip</span><p>If you're comfortable, you can write Task 2 first (it's worth more) – but you must <strong>lock in exactly 20 minutes for Task 1</strong>. Tap ▶ on the timer in the corner to practise pacing.</p></div>
+    <div class="note warn"><span class="tag">Tip</span><p>If you're comfortable, you can write Task 2 first (it's worth more) – but you must <strong>lock in exactly 20 minutes for Task 1</strong>.</p></div>
   </section>
 
   <section class="block" id="s0-rules">
-    <h3>5. Seven golden rules</h3>
+    <h3>5. 7 rules</h3>
     <div class="flow">
       <div class="step"><span class="k">1</span><h4>Underline every requirement</h4><p>Missing one point costs Task Fulfillment marks immediately. Answer fully first, polish later.</p></div>
       <div class="step"><span class="k">2</span><h4>Meet the word count</h4><p>Under the minimum loses marks. Target: 120–150 words / 260–300 words.</p></div>
@@ -545,7 +543,7 @@
   </section>
 
   <section class="block" id="s1-tone">
-    <h3>3. Formal or informal? Decide in 10 seconds</h3>
+    <h3>3. Formal or informal?</h3>
     <div class="tablewrap"><table class="stack">
       <thead><tr><th></th><th>Informal</th><th>Formal</th></tr></thead>
       <tbody>
@@ -560,7 +558,7 @@
   </section>
 
   <section class="block" id="s1-frame">
-    <h3>4. The 5-part frame – for any prompt</h3>
+    <h3>4. The 5-part frame</h3>
     <div class="frame">
       <div class="row"><div class="lb">1 · Greeting<small>1 line</small></div><div class="tx"><span class="en">Dear Anna,</span> · <span class="en">Dear Mr Lewis,</span> · <span class="en">Dear Sir or Madam,</span></div></div>
       <div class="row"><div class="lb">2 · Opening<small>1–2 sentences</small></div><div class="tx">Thanks / reason for writing: <span class="en">Thanks for your email. It was great to hear that…</span> · <span class="en">Thank you for your email. I am writing to…</span></div></div>
@@ -568,7 +566,7 @@
       <div class="row"><div class="lb">4 · Closing<small>1–2 sentences</small></div><div class="tx"><span class="en">Let me know if you need anything else. I can't wait to see you!</span> · <span class="en">I look forward to hearing from you.</span></div></div>
       <div class="row"><div class="lb">5 · Sign-off<small>1 line</small></div><div class="tx"><span class="en">Best wishes,</span> · <span class="en">Love,</span> · <span class="en">Yours sincerely,</span> · <span class="en">Yours faithfully,</span> — <strong>no name</strong></div></div>
     </div>
-    <p class="vn" style="margin-top:10px">All together ≈ 11–13 sentences ≈ 130–150 words. By hand: start a new line after the greeting, one paragraph per point, the sign-off on its own line.</p>
+    <p class="vn" style="margin-top:10px">All together ≈ 11–13 sentences ≈ 130–150 words.</p>
   </section>
 
   <section class="block" id="s1-bank">
@@ -576,19 +574,19 @@
     <div class="tablewrap"><table class="stack">
       <thead><tr><th>Function</th><th>Reusable phrases</th></tr></thead>
       <tbody>
-        <tr><td data-l="Function" class="fn">Opening · informal</td><td data-l="Phrases"><span class="en">Thanks for your email – it was great to hear from you. · Sorry for not writing sooner. · I hope you're well. · It's lovely to hear that…</span></td></tr>
-        <tr><td data-l="Function" class="fn">Opening · formal</td><td data-l="Phrases"><span class="en">Thank you for your email regarding… · I am writing in response to your email of 5 May. · I am writing to (ask for / apply for / complain about / thank you for)…</span></td></tr>
-        <tr><td data-l="Function" class="fn">Moving to each point</td><td data-l="Phrases"><span class="en">First of all, … · As for your first question, … · Regarding …, · About the …, · Secondly, … · Finally, … · One more thing – …</span></td></tr>
-        <tr><td data-l="Function" class="fn">Giving information / describing</td><td data-l="Phrases"><span class="en">It is usually … · There are plenty of … · … is only ten minutes from … · It costs about … · The best place for … is …</span></td></tr>
-        <tr><td data-l="Function" class="fn">Suggesting – advising</td><td data-l="Phrases"><span class="en">I'd recommend (V-ing / N) · You should definitely … · Why don't you …? · How about (V-ing)? · It would be a good idea to … · If I were you, I would …</span></td></tr>
-        <tr><td data-l="Function" class="fn">Inviting</td><td data-l="Phrases"><span class="en">I'm writing to invite you to … · Would you like to …? · I'd love you to come … · It would be great if you could … · It will be held at … on …</span></td></tr>
-        <tr><td data-l="Function" class="fn">Apologising</td><td data-l="Phrases"><span class="en">I'm really sorry, but I'm afraid I can't … · I apologise for … · The reason is that … · I feel terrible about this. · To make up for it, …</span></td></tr>
-        <tr><td data-l="Function" class="fn">Thanking</td><td data-l="Phrases"><span class="en">I'm writing to thank you for … · It was so kind of you to … · I really appreciate … · To show my appreciation, …</span></td></tr>
-        <tr><td data-l="Function" class="fn">Asking for information · formal</td><td data-l="Phrases"><span class="en">I would like to know … · Could you tell me whether …? · I would be grateful if you could … · Is it possible to …?</span></td></tr>
-        <tr><td data-l="Function" class="fn">Complaining · requesting · formal</td><td data-l="Phrases"><span class="en">I am writing to complain about … · Unfortunately, … · I was disappointed that … · One thing that could be improved is … · It would be better if … · I would like to request a refund / a replacement.</span></td></tr>
-        <tr><td data-l="Function" class="fn">Giving feedback</td><td data-l="Phrases"><span class="en">The part I found most useful was … · What I liked most about … was … · Overall, I was very satisfied with … · I would certainly recommend … because …</span></td></tr>
-        <tr><td data-l="Function" class="fn">Closing · informal</td><td data-l="Phrases"><span class="en">Let me know … · I can't wait to see you. · Hope to hear from you soon. · Write back soon! · Take care.</span></td></tr>
-        <tr><td data-l="Function" class="fn">Closing · formal</td><td data-l="Phrases"><span class="en">I look forward to hearing from you. · I look forward to your reply. · Thank you in advance for your help. · Please do not hesitate to contact me if you need any further information.</span></td></tr>
+        <tr><td data-l="Function" class="fn">Opening · informal</td><td data-l="Phrases"><ul><li><span class="en">Thanks for your email – it was great to hear from you.</span></li><li><span class="en">Sorry for not writing sooner.</span></li><li><span class="en">I hope you're well.</span></li><li><span class="en">It's lovely to hear that…</span></li></ul></td></tr>
+        <tr><td data-l="Function" class="fn">Opening · formal</td><td data-l="Phrases"><ul><li><span class="en">Thank you for your email regarding…</span></li><li><span class="en">I am writing in response to your email of 5 May.</span></li><li><span class="en">I am writing to (ask for / apply for / complain about / thank you for)…</span></li></ul></td></tr>
+        <tr><td data-l="Function" class="fn">Moving to each point</td><td data-l="Phrases"><ul><li><span class="en">First of all, …</span></li><li><span class="en">As for your first question, …</span></li><li><span class="en">Regarding …,</span></li><li><span class="en">About the …,</span></li><li><span class="en">Secondly, …</span></li><li><span class="en">Finally, …</span></li><li><span class="en">One more thing – …</span></li></ul></td></tr>
+        <tr><td data-l="Function" class="fn">Giving information / describing</td><td data-l="Phrases"><ul><li><span class="en">It is usually …</span></li><li><span class="en">There are plenty of …</span></li><li><span class="en">… is only ten minutes from …</span></li><li><span class="en">It costs about …</span></li><li><span class="en">The best place for … is …</span></li></ul></td></tr>
+        <tr><td data-l="Function" class="fn">Suggesting – advising</td><td data-l="Phrases"><ul><li><span class="en">I'd recommend (V-ing / N)</span></li><li><span class="en">You should definitely …</span></li><li><span class="en">Why don't you …?</span></li><li><span class="en">How about (V-ing)?</span></li><li><span class="en">It would be a good idea to …</span></li><li><span class="en">If I were you, I would …</span></li></ul></td></tr>
+        <tr><td data-l="Function" class="fn">Inviting</td><td data-l="Phrases"><ul><li><span class="en">I'm writing to invite you to …</span></li><li><span class="en">Would you like to …?</span></li><li><span class="en">I'd love you to come …</span></li><li><span class="en">It would be great if you could …</span></li><li><span class="en">It will be held at … on …</span></li></ul></td></tr>
+        <tr><td data-l="Function" class="fn">Apologising</td><td data-l="Phrases"><ul><li><span class="en">I'm really sorry, but I'm afraid I can't …</span></li><li><span class="en">I apologise for …</span></li><li><span class="en">The reason is that …</span></li><li><span class="en">I feel terrible about this.</span></li><li><span class="en">To make up for it, …</span></li></ul></td></tr>
+        <tr><td data-l="Function" class="fn">Thanking</td><td data-l="Phrases"><ul><li><span class="en">I'm writing to thank you for …</span></li><li><span class="en">It was so kind of you to …</span></li><li><span class="en">I really appreciate …</span></li><li><span class="en">To show my appreciation, …</span></li></ul></td></tr>
+        <tr><td data-l="Function" class="fn">Asking for information · formal</td><td data-l="Phrases"><ul><li><span class="en">I would like to know …</span></li><li><span class="en">Could you tell me whether …?</span></li><li><span class="en">I would be grateful if you could …</span></li><li><span class="en">Is it possible to …?</span></li></ul></td></tr>
+        <tr><td data-l="Function" class="fn">Complaining · requesting · formal</td><td data-l="Phrases"><ul><li><span class="en">I am writing to complain about …</span></li><li><span class="en">Unfortunately, …</span></li><li><span class="en">I was disappointed that …</span></li><li><span class="en">One thing that could be improved is …</span></li><li><span class="en">It would be better if …</span></li><li><span class="en">I would like to request a refund / a replacement.</span></li></ul></td></tr>
+        <tr><td data-l="Function" class="fn">Giving feedback</td><td data-l="Phrases"><ul><li><span class="en">The part I found most useful was …</span></li><li><span class="en">What I liked most about … was …</span></li><li><span class="en">Overall, I was very satisfied with …</span></li><li><span class="en">I would certainly recommend … because …</span></li></ul></td></tr>
+        <tr><td data-l="Function" class="fn">Closing · informal</td><td data-l="Phrases"><ul><li><span class="en">Let me know …</span></li><li><span class="en">I can't wait to see you.</span></li><li><span class="en">Hope to hear from you soon.</span></li><li><span class="en">Write back soon!</span></li><li><span class="en">Take care.</span></li></ul></td></tr>
+        <tr><td data-l="Function" class="fn">Closing · formal</td><td data-l="Phrases"><ul><li><span class="en">I look forward to hearing from you.</span></li><li><span class="en">I look forward to your reply.</span></li><li><span class="en">Thank you in advance for your help.</span></li><li><span class="en">Please do not hesitate to contact me if you need any further information.</span></li></ul></td></tr>
       </tbody>
     </table></div>
   </section>
