@@ -75,22 +75,31 @@
   .rail-title { font-size: 1.5em; font-weight: 900; color: #fff; letter-spacing: -0.01em; line-height: 1.12; margin-top: 4px; }
   .rail-sub { font-size: .84em; color: #D8C6EA; margin-top: 6px; }
   .rail-nav { padding: 12px 12px 18px; flex: 1; }
-  .rail-btn { width: 100%; appearance: none; border: 0; background: transparent; cursor: pointer; display: flex; align-items: center; gap: 12px; text-align: left; padding: 11px 12px; border-radius: 10px; color: #EADFF4; font-family: var(--font-cond); font-weight: 700; font-size: 1em; letter-spacing: .02em; border-left: 3px solid transparent; margin-bottom: 2px; }
+  .rail-btn { width: 100%; appearance: none; border: 0; background: transparent; cursor: pointer; display: flex; align-items: center; gap: 12px; text-align: left; padding: 11px 12px; border-radius: 10px; color: #EADFF4; font-family: var(--font-cond); font-weight: 700; font-size: 1em; letter-spacing: .02em; border-left: 3px solid transparent; }
   .rail-btn .idx { flex: none; width: 26px; height: 26px; display: grid; place-items: center; border-radius: 7px; background: rgba(255,255,255,.1); font-family: var(--font-mono); font-size: .78em; color: #E3D2F0; }
   .rail-btn small { display: block; font-family: var(--font); font-weight: 400; font-size: .78em; color: #C9B3DF; letter-spacing: 0; }
   .rail-btn:hover { background: rgba(255,255,255,.08); }
   .rail-btn[aria-selected="true"] { background: rgba(255,255,255,.12); border-left-color: var(--gold); color: #fff; }
   .rail-btn[aria-selected="true"] .idx { background: linear-gradient(135deg, var(--orange), var(--gold)); color: #3A1E00; }
   .rail-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 1px; }
+  .rail-item { margin-bottom: 2px; }
+  .rail-group { font-family: var(--font-cond); text-transform: uppercase; letter-spacing: .1em; font-size: .7em; color: #C9B3DF; padding: 12px 12px 4px; }
+  .sub-outline { list-style: none; margin: 0 0 0 38px; padding: 0; display: none; gap: 1px; border-left: 1px solid rgba(255,255,255,.16); }
+  .rail-item.active .sub-outline { display: grid; margin-bottom: 8px; margin-top: 2px; }
+  .sub-outline li { margin: 0; }
+  .sub-outline a { display: block; padding: 5px 0 5px 14px; font-size: .84em; color: #D2BCE6; text-decoration: none; border-left: 2px solid transparent; margin-left: -1px; }
+  .sub-outline a:hover { color: #fff; }
   .rail-foot { padding: 12px 24px 18px; font-size: .78em; color: #B9A3CF; border-top: 1px solid rgba(255,255,255,.14); display: flex; justify-content: space-between; align-items: center; gap: 8px; }
   .rail-foot button { appearance: none; border: 1px solid rgba(255,255,255,.25); background: transparent; color: #E3D2F0; border-radius: 999px; padding: 3px 10px; font-size: .95em; cursor: pointer; }
   @media (max-width: 900px) {
     .rail { position: sticky; top: 0; z-index: 30; width: 100%; height: auto; flex-direction: row; align-items: center; overflow: visible; }
-    .rail-brand, .rail-foot { display: none; }
+    .rail-brand, .rail-foot, .rail-group { display: none; }
     .rail-nav { display: flex; padding: 6px 8px; flex: 1; overflow-x: auto; gap: 2px; }
-    .rail-btn { white-space: nowrap; padding: 9px 11px; border-left: 0; border-bottom: 3px solid transparent; margin-bottom: 0; font-size: .92em; }
+    .rail-item { margin-bottom: 0; flex: none; }
+    .rail-btn { white-space: nowrap; padding: 9px 11px; border-left: 0; border-bottom: 3px solid transparent; font-size: .92em; }
     .rail-btn small { display: none; }
     .rail-btn[aria-selected="true"] { border-left-color: transparent; border-bottom-color: var(--gold); }
+    .sub-outline, .rail-item.active .sub-outline { display: none; }
   }
 
   /* ---------- main ---------- */
@@ -403,20 +412,23 @@
   <div class="rail-brand">
     <div class="rail-kicker">VSTEP Prep · B1–B2</div>
     <div class="rail-title">Writing<br>Task 1 + Task 2</div>
-    <div class="rail-sub">Paragraph frames · reusable phrases · model answers · self-marking practice · sample papers</div>
   </div>
   <nav class="rail-nav" role="tablist" aria-label="Sheets">
-    <button class="rail-btn" role="tab" data-sheet="s0"><span class="idx">0</span><span>Overview<small>Structure · criteria · 60 minutes</small></span></button>
-    <button class="rail-btn" role="tab" data-sheet="s1"><span class="idx">1</span><span>Task 1 · Email<small>5-part frame · 7 models</small></span></button>
-    <button class="rail-btn" role="tab" data-sheet="s2"><span class="idx">2</span><span>Task 2 · Essay<small>5 types · 13-sentence frame · 5 models</small></span></button>
-    <button class="rail-btn" role="tab" data-sheet="s3"><span class="idx">3</span><span>Practice<small>Word count · self-marking</small></span></button>
-    <button class="rail-btn" role="tab" data-sheet="s4"><span class="idx">4</span><span>Sample papers<small>3 full papers · 60 minutes</small></span></button>
-    <button class="rail-btn" role="tab" data-sheet="s5"><span class="idx">5</span><span>Quick review<small>One page before the exam</small></span></button>
+    <div class="rail-group">Getting started</div>
+    <div class="rail-item"><button class="rail-btn" role="tab" data-sheet="s0"><span class="idx">0</span><span>Overview<small>Structure · criteria · 60 minutes</small></span></button><ul class="sub-outline"></ul></div>
+    <div class="rail-group">Language</div>
+    <div class="rail-item"><button class="rail-btn" role="tab" data-sheet="s1"><span class="idx">1</span><span>Task 1 · Email<small>5-part frame · 7 models</small></span></button><ul class="sub-outline"></ul></div>
+    <div class="rail-item"><button class="rail-btn" role="tab" data-sheet="s2"><span class="idx">2</span><span>Task 2 · Essay<small>5 types · 13-sentence frame · 5 models</small></span></button><ul class="sub-outline"></ul></div>
+    <div class="rail-group">Practice &amp; papers</div>
+    <div class="rail-item"><button class="rail-btn" role="tab" data-sheet="s3"><span class="idx">3</span><span>Practice<small>Word count · self-marking</small></span></button><ul class="sub-outline"></ul></div>
+    <div class="rail-item"><button class="rail-btn" role="tab" data-sheet="s4"><span class="idx">4</span><span>Sample papers<small>3 full papers · 60 minutes</small></span></button><ul class="sub-outline"></ul></div>
+    <div class="rail-group">Review</div>
+    <div class="rail-item"><button class="rail-btn" role="tab" data-sheet="s5"><span class="idx">5</span><span>Quick review<small>One page before the exam</small></span></button><ul class="sub-outline"></ul></div>
   </nav>
-  <div class="rail-foot"><span>Internal study guide · 2026</span><button type="button" id="themeBtn" title="Toggle light/dark">◐</button></div>
+  <div class="rail-foot"><button type="button" id="themeBtn" title="Toggle light/dark">◐</button></div>
 </aside>
 
-<main>
+<main data-key="vstep-writing-en">
 <!-- ================= SHEET 0 ================= -->
 <section class="sheet" id="s0" data-timer="3600" data-tlabel="Whole Writing paper · 60′">
   <div class="sheet-head">
@@ -1326,9 +1338,10 @@
   'use strict';
   const $ = (s, r) => (r || document).querySelector(s);
   const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
+  const DOC_KEY = (document.querySelector('main') && document.querySelector('main').dataset.key) || 'vstep-writing';
   const LS = {
-    get(k, d) { try { const v = localStorage.getItem('vw.' + k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } },
-    set(k, v) { try { localStorage.setItem('vw.' + k, JSON.stringify(v)); } catch (e) {} }
+    get(k, d) { try { const v = localStorage.getItem('vw.' + DOC_KEY + '.' + k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } },
+    set(k, v) { try { localStorage.setItem('vw.' + DOC_KEY + '.' + k, JSON.stringify(v)); } catch (e) {} }
   };
   const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
@@ -1354,12 +1367,23 @@
     const s = document.getElementById(id); if (!s) return;
     sheets.forEach(x => x.hidden = x !== s);
     tabs.forEach(b => b.setAttribute('aria-selected', b.dataset.sheet === id ? 'true' : 'false'));
+    $$('.rail-item').forEach(it => { const b = $('.rail-btn', it); it.classList.toggle('active', !!b && b.dataset.sheet === id); });
     if (!Timer.running) Timer.preset(+s.dataset.timer, s.dataset.tlabel);
     if (push !== false) { try { history.replaceState(null, '', '#' + id); } catch (e) {} }
     LS.set('sheet', id);
     window.scrollTo({ top: 0, behavior: 'auto' });
   }
   tabs.forEach(b => b.addEventListener('click', () => showSheet(b.dataset.sheet)));
+  $$('.rail-item').forEach(item => {
+    const btn = $('.rail-btn', item), sheetId = btn && btn.dataset.sheet, sheet = sheetId && document.getElementById(sheetId);
+    const ul = $('.sub-outline', item); if (!sheet || !ul) return;
+    ul.innerHTML = $$('section.block[id] > h3', sheet).map(h => `<li><a href="#${h.parentElement.id}">${h.textContent}</a></li>`).join('');
+    $$('a', ul).forEach(a => a.addEventListener('click', e => {
+      e.preventDefault(); showSheet(sheetId);
+      const t = document.getElementById(a.getAttribute('href').slice(1));
+      if (t) setTimeout(() => t.scrollIntoView({ behavior: 'smooth', block: 'start' }), 30);
+    }));
+  });
   document.addEventListener('click', e => {
     const a = e.target.closest('[data-goto]'); if (!a) return;
     e.preventDefault(); showSheet(a.dataset.goto);
